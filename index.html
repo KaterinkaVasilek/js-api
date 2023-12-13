@@ -4,11 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 
 <body>
+  <div class="slider container">
+    <div class="slider__wrapper">
+      <div class="slider__list">
+        <img class="slider__img" src="img/1.jpg" alt="Салатик">
+        <img class="slider__img" src="img/2.jpg" alt="Салатик">
+        <img class="slider__img" src="img/3.jpg" alt="Салатик">
+        <img class="slider__img" src="img/4.jpg" alt="Салатик">
+        <img class="slider__img" src="img/5.jpg" alt="Салатик">
+      </div>
+      <button class="slider__btn slider__btn--prev">&#9754;</button>
+      <button class="slider__btn slider__btn--next">&#9755;</button>
+    </div>
 
+    <ol class="slider__nav-list">
+      <li class="slider__nav-item slider__nav-item--active" data-slide-to="0">
+        <input type="radio" name="slider-btn" checked>
+      </li>
+      <li class="slider__nav-item" data-slide-to="1">
+        <input type="radio" name="slider-btn">
+      </li>
+      <li class="slider__nav-item" data-slide-to="2">
+        <input type="radio" name="slider-btn">
+      </li>
+      <li class="slider__nav-item" data-slide-to="3">
+        <input type="radio" name="slider-btn">
+      </li>
+      <li class="slider__nav-item" data-slide-to="4">
+        <input type="radio" name="slider-btn">
+      </li>
+    </ol>
+  </div>
+  <script src="main.js"></script>
 </body>
 
 </html>
