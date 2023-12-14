@@ -1,0 +1,49 @@
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.photo__img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.photo__user {
+  font-size: 14px;
+}
+
+.likes {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.likes__btn {
+  position: relative;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.likes__btn::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  background: url("img/like.svg") no-repeat;
+  background-size: cover;
+}
+
+.likes__counter {
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+}
