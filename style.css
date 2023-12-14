@@ -4,87 +4,46 @@
   padding: 0 20px;
 }
 
-.slider {
-  position: relative;
-  display: grid;
-}
-
-.slider__img {
-  min-width: 600px;
-  max-height: 300px;
-  max-width: 100%;
-  width: 100%;
+.photo__img {
   object-fit: cover;
+  object-position: center;
 }
 
-.slider__wrapper {
-  margin-bottom: 20px;
-  display: flex;
-  overflow: hidden;
+.photo__user {
+  font-size: 14px;
 }
 
-.slider__list,
-.slider__nav-list {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+.likes {
+  margin: 10px 0;
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-.slider__list {
-  transition: transform 0.5s ease-in-out;
-}
-
-.slider__nav-list {
-  justify-self: center;
-}
-
-.slider__btn {
-  position: absolute;
-  padding: 5px;
-  top: calc(50% - 30px);
-  width: 60px;
-  height: 60px;
-  font-size: 40px;
-  line-height: 40px;
-  border: none;
-  border-radius: 10px;
-  background-color: #afafaf;
-  cursor: pointer;
-}
-
-.slider__btn:hover {
-  opacity: 0.7;
-}
-
-.slider__btn--prev {
-  left: -55px;
-}
-
-.slider__btn--next {
-  right: -55px;
-}
-
-.slider__nav-list {
-  gap: 25px;
-}
-
-.slider__nav-item {
+.likes__btn {
   position: relative;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
-.slider__nav-item::before {
+.likes__btn::before {
   position: absolute;
   content: "";
-  width: 15px;
-  height: 15px;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  background: url("img/like.svg") no-repeat;
+  background-size: cover;
 }
 
-.slider__nav-item--active::before {
-  background-color: #000;
+.likes__counter {
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
 }

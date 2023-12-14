@@ -1,31 +1,26 @@
-const slider = document.querySelector(".slider__list");
-const sliderImgs = Array.from(slider.querySelectorAll(".slider__img"));
-const slideCount = sliderImgs.length;
-const prevButton = document.querySelector(".slider__btn--prev");
-const nextButton = document.querySelector(".slider__btn--next");
-let slideIndex = 0;
+const likesBtn = document.querySelector(".likes__btn");
+const likesCounter = document.querySelector(".likes__counter");
+const img = document.querySelector(".photo__img");
+const author = document.querySelector('.photo__user span');
+let counter = 0;
 
-const showPreviousSlide = () => {
-  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-  sliderInit();
+const increaseLikes = () => {
+  counter += 1;
+  likesCounter.innerHTML = counter;
 }
 
-const showNextSlide = () => {
-  slideIndex = (slideIndex + 1) % slideCount;
-  sliderInit();
-}
+likesBtn.addEventListener("click", increaseLikes);
 
-const sliderInit = () => {
-  sliderImgs.forEach((slide, index) => {
-    if (index === slideIndex) {
-      slide.style.display = 'block';
-    } else {
-      slide.style.display = 'none';
-    }
+const url = "https://api.unsplash.com/photos/?client_id=AZ6UxQxiwcIZDhQW0ymIUyBWvLWo8HwEd1iDRrud4cs";
+let data = [];
+
+async function getData() {
+  const response = await fetch(url);
+  return await response.json();
+}
+getData().then((responseData) => {
+  responseData.forEach(el => {
+    img.src = el.urls.regular;
+    author.innerHTML = el.user.name;
   });
-}
-
-prevButton.addEventListener('click', showPreviousSlide);
-nextButton.addEventListener('click', showNextSlide);
-
-sliderInit();
+});
